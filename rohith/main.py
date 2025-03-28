@@ -197,6 +197,11 @@ def TradeLens():
                 data['RSI'] = calculate_rsi(data)
                 current_rsi = data['RSI'].iloc[-1]
                 st.write(f"RSI for {ticker}: {current_rsi:.2f}")
+                # Show which image we expect
+                image_file = get_rsi_image(current_rsi)
+
+                # Build image path using __file__ for cross-platform safety
+                image_path = os.path.join(os.path.dirname(__file__), image_file)
 
                 # Try loading image
                 if os.path.exists(image_path):
