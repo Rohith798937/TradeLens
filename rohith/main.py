@@ -203,8 +203,7 @@ def TradeLens():
                     st.image(image_file)
             
                 else: 
-                    st.warning(f"RSI image '{image_file}' not found.")
-            
+                    st.warning(f"RSI image '{image_file}' not found.")          
 
     with tabs[4]:  # TLens Chatbot
         st.title("TLens Chatbot")
