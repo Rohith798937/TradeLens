@@ -8,6 +8,7 @@ from alpha_vantage.fundamentaldata import FundamentalData
 from stocknews import StockNews
 import base64
 import requests
+import os
 
 # Page configuration
 st.set_page_config(layout="wide")
