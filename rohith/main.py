@@ -205,6 +205,9 @@ def TradeLens():
                 else:
                     st.warning(f"RSI image not found: {image_path}")
 
+        except Exception as e:
+            st.error("Failed to calculate RSI.")    
+
     with tabs[4]:  # TLens Chatbot
         st.title("TLens Chatbot")
         st.write("Ask your questions about stock performance, trends, or other topics!")
