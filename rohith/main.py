@@ -201,7 +201,7 @@ def TradeLens():
 
                 if os.path.exists(image_file): st.image(image_file)
             
-            else:
+                else:
                 st.warning(f"RSI image '{image_file}' not found.")
             
         '''except Exception as e:
