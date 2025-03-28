@@ -214,7 +214,7 @@ def TradeLens():
                 st.error(f"❌ Image file does not exist at path: `{image_path}`")
 
         except Exception as e:
-        st.error(f"❗ Failed to calculate RSI.\n\n**Reason**: `{str(e)}`")
+            st.error(f"❗ Failed to calculate RSI.\n\n**Reason**: `{str(e)}`")
     
 
     with tabs[4]:  # TLens Chatbot
