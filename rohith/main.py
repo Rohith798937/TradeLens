@@ -199,8 +199,11 @@ def TradeLens():
                 # Display corresponding image
                 image_file = get_rsi_image(current_rsi)
                 image_path = os.path.join("rohith", "data", image_file)
+
+                st.write(f" Trying to load: '{image_path}'")
                 
                 if os.path.exists(image_path):
+                    st.success(f" Found image: {image_path}")
                     st.image(image_path)
                 else:
                     st.warning(f"RSI image not found: {image_path}")
