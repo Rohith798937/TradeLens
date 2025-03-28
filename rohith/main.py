@@ -205,8 +205,6 @@ def TradeLens():
                 else: 
                     st.warning(f"RSI image '{image_file}' not found.")
             
-        '''except Exception as e:
-            st.error("Failed to calculate RSI.")'''
 
     with tabs[4]:  # TLens Chatbot
         st.title("TLens Chatbot")
