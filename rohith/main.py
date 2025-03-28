@@ -208,9 +208,7 @@ def TradeLens():
 
                 # Try loading image
                 if os.path.exists(image_path):
-                    with open(image_path, "rb") as f:
-                        st.image(f, caption=f"RSI Sentiment: {image_file[:-4]}")
-                        st.success("✅ RSI image displayed successfully.")
+                    st.image(image_path)
                 else:
                     st.error(f"❌ Image file does not exist at path: `{image_path}`")
 
