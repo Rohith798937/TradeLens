@@ -1,0 +1,7 @@
+streamlit
+yfinance
+plotly
+alpha_vantage
+stocknews
+requests
+numpy
