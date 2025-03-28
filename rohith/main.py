@@ -198,9 +198,12 @@ def TradeLens():
 
                 # Display corresponding image
                 image_file = get_rsi_image(current_rsi)
-                st.image(image_file)
-        except Exception as e:
-            st.error("Failed to calculate RSI.")
+                image_path = os.path.join("rohith", "data", image_file)
+                
+                if os.path.exists(image_path):
+                    st.image(image_path)
+                else:
+                    st.warning(f"RSI image not found: {image_path}")
 
     with tabs[4]:  # TLens Chatbot
         st.title("TLens Chatbot")
