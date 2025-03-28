@@ -203,7 +203,7 @@ def TradeLens():
                 st.write(f"🔍 Expected image file: `{image_file}`")
 
                 # Build image path using __file__ for cross-platform safety
-                image_path = os.path.join(os.path.dirname(__file__), "data", image_file)
+                image_path = os.path.join(os.path.dirname(__file__), image_file)
                 st.write(f"🧭 Full path: `{image_path}`")
 
                 # Try loading image
