@@ -199,10 +199,11 @@ def TradeLens():
                 # Display corresponding image
                 image_file = get_rsi_image(current_rsi)
 
-                if os.path.exists(image_file): st.image(image_file)
+                if os.path.exists(image_file): 
+                    st.image(image_file)
             
-                else:
-                st.warning(f"RSI image '{image_file}' not found.")
+                else: 
+                    st.warning(f"RSI image '{image_file}' not found.")
             
         '''except Exception as e:
             st.error("Failed to calculate RSI.")'''
