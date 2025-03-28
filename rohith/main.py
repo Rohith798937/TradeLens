@@ -188,30 +188,30 @@ def TradeLens():
 
     with tabs[3]:  # Sentiment Indicator
         st.write(f"Sentiment Indicator for {ticker}")
-    try:
-        if len(data) < 14:
-            st.warning(f"Not enough data points to calculate RSI for {ticker}. Please select a larger date range.")
-        else:
-            # Calculate RSI
-            data['RSI'] = calculate_rsi(data)
-            current_rsi = data['RSI'].iloc[-1]
-            st.write(f"RSI for {ticker}: {current_rsi:.2f}")
-
-            # Show which image we expect
-            image_file = get_rsi_image(current_rsi)
-            st.write(f"🔍 Expected image file: `{image_file}`")
-
-            # Build image path using __file__ for cross-platform safety
-            image_path = os.path.join(os.path.dirname(__file__), "data", image_file)
-            st.write(f"🧭 Full path: `{image_path}`")
-
-            # Try loading image
-            if os.path.exists(image_path):
-                with open(image_path, "rb") as f:
-                    st.image(f, caption=f"RSI Sentiment: {image_file[:-4]}")
-                    st.success("✅ RSI image displayed successfully.")
+        try:
+            if len(data) < 14:
+                st.warning(f"Not enough data points to calculate RSI for {ticker}. Please select a larger date range.")
             else:
-                st.error(f"❌ Image file does not exist at path: `{image_path}`")
+                # Calculate RSI
+                data['RSI'] = calculate_rsi(data)
+                current_rsi = data['RSI'].iloc[-1]
+                st.write(f"RSI for {ticker}: {current_rsi:.2f}")
+
+                # Show which image we expect
+                image_file = get_rsi_image(current_rsi)
+                st.write(f"🔍 Expected image file: `{image_file}`")
+
+                # Build image path using __file__ for cross-platform safety
+                image_path = os.path.join(os.path.dirname(__file__), "data", image_file)
+                st.write(f"🧭 Full path: `{image_path}`")
+
+                # Try loading image
+                if os.path.exists(image_path):
+                    with open(image_path, "rb") as f:
+                        st.image(f, caption=f"RSI Sentiment: {image_file[:-4]}")
+                        st.success("✅ RSI image displayed successfully.")
+                else:
+                    st.error(f"❌ Image file does not exist at path: `{image_path}`")
 
         except Exception as e:
             st.error(f"❗ Failed to calculate RSI.\n\n**Reason**: `{str(e)}`")
